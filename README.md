@@ -22,6 +22,8 @@ Cada registro contiene:
 - Número de visitante por tipo
 - Nacionalidad (Extranjera o Nacional)
 
+## Objetivo general
+
 El objetivo general es desarrollar una plataforma, que permita a los usuarios finales (Investigadores, reporteros y ciudadanos en general), generar búsquedas para obtener indicadores de visitas por tipo de visitante, nacionalidad y cantidad por recinto en año.
 
 Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar distintas áreas **ESCENCIALES** para un **Data Scientist**:
@@ -35,6 +37,8 @@ Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar
 
 - Estadística aplicada (Histogramas, Gráficos de barras, Totales, Promedios, etc.)
 - Interpretación estadística. **(El punto más importante)** Cómo podemos interpretar los datos como **Data Scientist** para encontrar soluciones usando los datos.
+
+## Objetivos específicos (Reto)
 
 Objetivos específicos y numerados:
 
