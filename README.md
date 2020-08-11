@@ -22,8 +22,6 @@ Cada registro contiene:
 - Número de visitante por tipo
 - Nacionalidad (Extranjera o Nacional)
 
-# Objetivos generales
-
 El objetivo general es desarrollar una plataforma, que permita a los usuarios finales (Investigadores, reporteros y ciudadanos en general), generar búsquedas para obtener indicadores de visitas por tipo de visitante, nacionalidad y cantidad por recinto en año.
 
 Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar distintas áreas **ESCENCIALES** para un **Data Scientist**:
@@ -37,8 +35,6 @@ Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar
 
 - Estadística aplicada (Histogramas, Gráficos de barras, Totales, Promedios, etc.)
 - Interpretación estadística. **(El punto más importante)** Cómo podemos interpretar los datos como **Data Scientist** para encontrar soluciones usando los datos.
-
-## Objetivos específicos
 
 Objetivos específicos y numerados:
 
@@ -75,8 +71,18 @@ Objetivos específicos y numerados:
 
 ---
 
-# NOTAS:
+## Pasos a seguir:
+
+1.  Hacer un **"Fork"** de este proyecto.
+2.  Revolver los retos propuestos.
+3.  Crear un Pull Request hacia este repositorio.
+
+**NOTAS:**
 
 - **Todo debe estar comentado y documentado, cada paso explicado el por qué y para qué de cada acción.**
 
 - **Usar solo variables y funciones en inglés. Todo el código debe estar escrito en inglés, no será bien visto el uso de spanglish como**
+
+## Licencia:
+
+challenge-ds-02 se lanza bajo la licencia [MIT](https://opensource.org/licenses/MIT).
