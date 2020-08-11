@@ -3,7 +3,7 @@
 Hola Master! Este reto nos permitirá evaluar tu nivel en temas específicos de **Data Science**. No te preocupes si no logras todos los objetivos, será importante ser 100% honestos ya que eso nos permite personalizar el Learning Path acorde a tu nivel.
 
 _Imagina un punto a dónde quieres llegar y traza un plan para llegar allí.
-Pero se honesto contigo, y establece tu punto de partida_
+Pero se honesto contigo y establece tu punto de partida_
 
 _-(Jordan Belfort)_
 
