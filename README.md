@@ -81,7 +81,7 @@ Objetivos específicos y numerados:
 
 - **Todo debe estar comentado y documentado, cada paso explicado el por qué y para qué de cada acción.**
 
-- **Usar solo variables y funciones en inglés. Todo el código debe estar escrito en inglés, no será bien visto el uso de spanglish como**
+- **Usar solo variables y funciones en inglés. Todo el código debe estar escrito en inglés, no será bien visto el uso de spanglish**
 
 ## Licencia:
 
