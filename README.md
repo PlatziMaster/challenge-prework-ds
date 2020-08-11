@@ -26,7 +26,7 @@ Cada registro contiene:
 
 El objetivo general es desarrollar una plataforma, que permita a los usuarios finales (Investigadores, reporteros y ciudadanos en general), generar búsquedas para obtener indicadores de visitas por tipo de visitante, nacionalidad y cantidad por recinto en año.
 
-Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar distintas áreas **ESCENCIALES** para un **Data Scientist**:
+Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar distintas áreas **ESENCIALES** para un **Data Scientist**:
 
 - Abstraer un problema utilizando datos crudos y recabados desde una dependencia que puede ser o no controlada por un experto en datos y puede contener errores.
 - Manipulación de datos
