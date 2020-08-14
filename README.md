@@ -42,7 +42,7 @@ Dividiremos este reto en objetivos **específicos** que nos permitirán trabajar
 
 Objetivos específicos y numerados:
 
-1. Leer los datos utilizando un programa que de opción a insertarlo desde una interfaz gráfica simple o bien, desde línea de comandos. Pasando el archivo como un argumento.
+1. Leer los datos del archivo **INAH_detallado_2019.csv (Presente en este repositorio)** utilizando un programa que de opción a insertarlo desde una interfaz gráfica simple o bien, desde línea de comandos. Pasando el archivo como un argumento.
 
 **Mostrar datos de archivo desde línea de comandos**
 
@@ -50,7 +50,7 @@ Objetivos específicos y numerados:
 
 **Mostrarlos como dataframe en Tabla con los datos mencionados arriba**
 
-4. Calculen los parámetros estadísticos:
+3. Calculen los parámetros estadísticos:
 
 - Totales por Estado por temporalidad (Mes y Año)
 - Totales por Estado por tipo de visitante
@@ -63,13 +63,13 @@ Objetivos específicos y numerados:
 - Porcentaje de tipo de visitantes por mes y año
 - Porcentaje de tipo de visitantes por recinto (Mes y Año)
 
-5. Graficar los parámetros estadísticos con Plotly. Deben tener textos descriptivos, títulos, nombres de ejes, etc.
+4. Graficar los parámetros estadísticos con Plotly. Deben tener textos descriptivos, títulos, nombres de ejes, etc.
 
 **Las gráficas deben entenderse por cualquier persona, sea experta o no en área estadística.**
 
 5. Una interfaz gráfica que implemente todo lo anterior (no desde línea de comandos) para poder insertar los datos, filtrarlos, mostrarlos a manera de tabla, realizar búsqueda por parámetro y visualizar los datos.
 
-**Usar PyQT, Tkinter, WxPython, Kivy u otra librería para componentes gráficos a su elección)**
+**Usar PyQT, Tkinter, WxPython, Kivy u otra librería para componentes gráficos a su elección**
 
 6. Interpretar los resultados de manera sintetizada y concisa en formato de pie para cada gráfico y cálculo.
 
