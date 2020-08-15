@@ -87,9 +87,47 @@ class Ui_Dialog(object):
 
     def addItemsToLayout (self):
         text = self.cbSelection.currentText()
-        df = tablesInformation.dfTable()
-        print(text)
-        # self.tblViewer.setModel(df)
+        if text == 'All items':
+            print(tablesInformation.dfTable())
+        elif text == 'Estructure data':
+            print(tablesInformation.tblDataFrame())
+        elif text == 'tTotal per state per monh':
+            print(tablesInformation.total_state_by_month(),text)
+        elif text == 'Total per state per year':
+            print(tablesInformation.total_state_by_year(),text)
+        elif text == 'Total per kind of visitor':
+            print(tablesInformation.total_state_by_kind_visitor(),text)
+        elif text == 'Total per kind of visitor and time (month)':
+            print(tablesInformation.total_state_by_kind_visitor_month(),text)
+        elif text == 'Total per kind of visitor and time (year)':
+            print(tablesInformation.total_state_by_kind_visitor_year(),text)
+        elif text == 'Total per kind of work type and time (month)':
+            print(tablesInformation.total_state_by_kind_work_month(),text)
+        elif text == 'Total per kind of work type and time (year)':
+            print(tablesInformation.total_state_by_kind_work_year(),text)
+        elif text == 'Total per kind of work type and kind of visitor':
+            print(tablesInformation.total_state_by_kind_work_visitor_year(),text)
+        elif text == 'Average per state (month)':
+            print(tablesInformation.average_state_month(),text)
+        elif text == 'Average per state (year)':
+            print(tablesInformation.average_state_year(),text)
+        elif text == 'Average per state and kind of visitors (month)':
+            print(tablesInformation.average_state_visitors_month(),text)
+        elif text == 'Average per state and kind of visitors(year)':
+            print(tablesInformation.average_state_visitors_year(),text)
+        elif text == 'Percentage per kind of visitor by month per state':
+            df = tablesInformation.dfTable()
+            total_state_by_kind_work_month = tablesInformation.total_state_by_kind_work_month()
+            percentage_visitors = total_state_by_kind_work_month / len(df)
+            print(percentage_visitors,text)
+        elif text == 'Percentage per kind of work type and time (month)':
+            print(tablesInformation.percentage_visitors_month(),text)
+        elif text == 'Percentage per kind of work type and time (year)':
+            print(tablesInformation.percentage_visitors_year(),text)
+        elif text == 'Percentage per state per month':
+            print(tablesInformation.percentage_visitors_work_month(),text)
+        elif text == 'Percentage per state per year':
+            print(tablesInformation.percentage_visitors_work_year(),text)
 
     def plotItem (self):
         text = self.cbSelection.currentText()
