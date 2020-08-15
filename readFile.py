@@ -18,7 +18,7 @@ print(data_frame)
 
 #### STEP 3 ####
 
-#Getting all the data from column 'Estado'
+# Getting all the data from column 'Estado'
 # Getting the unique result from column 'Estado'
 # Getting the total states in their column
 data_states = pd.DataFrame(df, columns = ['Estado'])

@@ -59,11 +59,13 @@ class Ui_Dialog(object):
         self.btnExit.setStyleSheet("color: rgb(11, 11, 42);\n"
 "background-color: rgb(181, 227, 67);")
         self.btnExit.setObjectName("btnExit")
-        self.tblViewer = QtWidgets.QTableView(Dialog)
+        self.tblViewer = QtWidgets.QTableWidget(Dialog)
         self.tblViewer.setGeometry(QtCore.QRect(30, 110, 751, 431))
         self.tblViewer.setStyleSheet("color: rgb(11, 11, 42);\n"
 "background-color: rgb(219, 219, 231);")
         self.tblViewer.setObjectName("tblViewer")
+        self.tblViewer.setColumnCount(0)
+        self.tblViewer.setRowCount(0)
         self.btnPlot = QtWidgets.QPushButton(Dialog)
         self.btnPlot.setGeometry(QtCore.QRect(680, 50, 101, 23))
         self.btnPlot.setStyleSheet("color: rgb(11, 11, 42);\n"
@@ -85,49 +87,157 @@ class Ui_Dialog(object):
     def exitNow(self):
         exit()
 
+
     def addItemsToLayout (self):
+
+        def settingDataTable(tableToSet, dataRows, totalColumns):
+            print('start!')
+            self.tblViewer.setColumnCount(0)
+            self.tblViewer.setRowCount(0)
+            self.tblViewer.setRowCount(len(tableToSet))
+            self.tblViewer.setColumnCount(totalColumns)
+            self.tblViewer.setHorizontalHeaderLabels(dataRows)
+            for i in range (0, totalColumns):
+                name = dataRows[i]
+                for j in range(0, len(tableToSet)):
+                    value = tableToSet[name].iloc[j]
+                    value = str(value)
+                    self.tblViewer.setItem(j, i,  QtWidgets.QTableWidgetItem(value))
+
         text = self.cbSelection.currentText()
         if text == 'All items':
-            print(tablesInformation.dfTable())
+            print(1)
+            tableToSet = tablesInformation.dfTable()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Estructure data':
-            print(tablesInformation.tblDataFrame())
-        elif text == 'tTotal per state per monh':
-            print(tablesInformation.total_state_by_month(),text)
+            print(2)
+            tableToSet = tablesInformation.tblDataFrame()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
+        elif text == 'Total per state per month':
+            print(3)
+            tableToSet = tablesInformation.total_state_by_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per state per year':
-            print(tablesInformation.total_state_by_year(),text)
+            print(4)
+            tableToSet = tablesInformation.total_state_by_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per kind of visitor':
-            print(tablesInformation.total_state_by_kind_visitor(),text)
+            print(5)
+            tableToSet = tablesInformation.total_state_by_kind_visitor().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per kind of visitor and time (month)':
-            print(tablesInformation.total_state_by_kind_visitor_month(),text)
+            print(6)
+            tableToSet = tablesInformation.total_state_by_kind_visitor_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per kind of visitor and time (year)':
-            print(tablesInformation.total_state_by_kind_visitor_year(),text)
+            print(7)
+            tableToSet = tablesInformation.total_state_by_kind_visitor_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per kind of work type and time (month)':
-            print(tablesInformation.total_state_by_kind_work_month(),text)
+            print(8)
+            tableToSet = tablesInformation.total_state_by_kind_work_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per kind of work type and time (year)':
-            print(tablesInformation.total_state_by_kind_work_year(),text)
+            print(9)
+            tableToSet = tablesInformation.total_state_by_kind_work_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Total per kind of work type and kind of visitor':
-            print(tablesInformation.total_state_by_kind_work_visitor_year(),text)
+            print(10)
+            tableToSet = tablesInformation.total_state_by_kind_work_visitor_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Average per state (month)':
-            print(tablesInformation.average_state_month(),text)
+            print(11)
+            tableToSet = tablesInformation.average_state_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Average per state (year)':
-            print(tablesInformation.average_state_year(),text)
+            print(12)
+            tableToSet = tablesInformation.average_state_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Average per state and kind of visitors (month)':
-            print(tablesInformation.average_state_visitors_month(),text)
+            print(13)
+            tableToSet = tablesInformation.average_state_visitors_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Average per state and kind of visitors(year)':
-            print(tablesInformation.average_state_visitors_year(),text)
+            print(14)
+            tableToSet = tablesInformation.average_state_visitors_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Percentage per kind of visitor by month per state':
-            df = tablesInformation.dfTable()
-            total_state_by_kind_work_month = tablesInformation.total_state_by_kind_work_month()
-            percentage_visitors = total_state_by_kind_work_month / len(df)
-            print(percentage_visitors,text)
+            print(15)
+            tableToSet = tablesInformation.percentage_visitors().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Percentage per kind of work type and time (month)':
-            print(tablesInformation.percentage_visitors_month(),text)
+            print(16)
+            tableToSet = tablesInformation.percentage_visitors_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Percentage per kind of work type and time (year)':
-            print(tablesInformation.percentage_visitors_year(),text)
+            print(17)
+            tableToSet = tablesInformation.percentage_visitors_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Percentage per state per month':
-            print(tablesInformation.percentage_visitors_work_month(),text)
+            print(18)
+            tableToSet = tablesInformation.percentage_visitors_work_month().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
         elif text == 'Percentage per state per year':
-            print(tablesInformation.percentage_visitors_work_year(),text)
+            print(19)
+            tableToSet = tablesInformation.percentage_visitors_work_year().reset_index()
+            dataRows = tableToSet.columns.values
+            totalColumns = len(dataRows)
+            settingDataTable(tableToSet,dataRows,totalColumns)
+            print('Done!')
 
     def plotItem (self):
         text = self.cbSelection.currentText()
@@ -156,10 +266,7 @@ class Ui_Dialog(object):
         elif text == 'Average per state and kind of visitors(year)':
             plotInfo.plotInfo(tablesInformation.average_state_visitors_year(),text)
         elif text == 'Percentage per kind of visitor by month per state':
-            df = tablesInformation.dfTable()
-            total_state_by_kind_work_month = tablesInformation.total_state_by_kind_work_month()
-            percentage_visitors = total_state_by_kind_work_month / len(df)
-            plotInfo.plotInfo(percentage_visitors,text)
+            plotInfo.plotInfo(tablesInformation.percentage_visitors(),text)
         elif text == 'Percentage per kind of work type and time (month)':
             plotInfo.plotInfo(tablesInformation.percentage_visitors_month(),text)
         elif text == 'Percentage per kind of work type and time (year)':

@@ -74,7 +74,7 @@ def average_state_visitors_year():
 
 def percentage_visitors():
     df = dfConvert()
-    percentage_visitors = total_state_by_kind_work_month / len(df)
+    percentage_visitors = total_state_by_kind_work_month() / len(df)
     return percentage_visitors
 
 def percentage_visitors_month():
@@ -98,8 +98,10 @@ def percentage_visitors_work_year():
     return percentage_visitors_work_year
 
 
-
-
+def percentage_visitors_work_year2():
+    df = dfConvert()
+    percentage_visitors_work_year = df.groupby(['Tipo de visitantes', 'Centro de trabajo', 'Año'])['Número de visitas'].aggregate([np.sum])
+    return percentage_visitors_work_year
 
 
 

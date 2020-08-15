@@ -168,7 +168,7 @@ background-color: rgb(181, 227, 67);</string>
     <string>Exit</string>
    </property>
   </widget>
-  <widget class="QTableView" name="tblViewer">
+  <widget class="QTableWidget" name="tblViewer">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -219,22 +219,6 @@ background-color: rgb(181, 227, 67);</string>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>btnSelect</sender>
-   <signal>clicked()</signal>
-   <receiver>tblViewer</receiver>
-   <slot>doItemsLayout()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>440</x>
-     <y>63</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>469</x>
-     <y>133</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btnExit</sender>
    <signal>clicked()</signal>
