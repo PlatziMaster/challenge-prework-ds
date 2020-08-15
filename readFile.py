@@ -122,6 +122,6 @@ average_state_visitors.plot(figsize = (10, 7), title = 'Average per state and ki
 percentage_visitors.plot(figsize = (10, 7), title = 'percentage per kind of visitor by month per state')
 percentage_visitors_month.plot(figsize = (10, 7), title = 'percentage per kind of work type and time (month)')
 percentage_visitors_year.plot(figsize = (10, 7), title = 'percentage per kind of work type and time (year)')
-percentage_visitors_work.plot(figsize = (10, 7), title = 'percentage visitor per kind of work')
+percentage_visitors_work.plot(figsize = (10, 7), title = 'Total per state per month and per year')
 
 plt.show()
