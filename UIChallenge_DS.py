@@ -242,39 +242,39 @@ class Ui_Dialog(object):
     def plotItem (self):
         text = self.cbSelection.currentText()
         if text == 'Total per state per month':
-            plotInfo.plotInfo(tablesInformation.total_state_by_month(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_month(),text,'State', 'Total of visitors')
         elif text == 'Total per state per year':
-            plotInfo.plotInfo(tablesInformation.total_state_by_year(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_year(),text, 'State', 'Total of visitors')
         elif text == 'Total per kind of visitor':
-            plotInfo.plotInfo(tablesInformation.total_state_by_kind_visitor(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_kind_visitor(),text, 'Kind of visitors', 'Total of visitors')
         elif text == 'Total per kind of visitor and time (month)':
-            plotInfo.plotInfo(tablesInformation.total_state_by_kind_visitor_month(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_kind_visitor_month(),text, 'Kind of visitors (monthly)', 'Total of visitors')
         elif text == 'Total per kind of visitor and time (year)':
-            plotInfo.plotInfo(tablesInformation.total_state_by_kind_visitor_year(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_kind_visitor_year(),text, 'Kind of visitors yearly)', 'Total of visitors')
         elif text == 'Total per kind of work type and time (month)':
-            plotInfo.plotInfo(tablesInformation.total_state_by_kind_work_month(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_kind_work_month(),text, 'Kind of visitors & work (monthly)', 'Total of visitors')
         elif text == 'Total per kind of work type and time (year)':
-            plotInfo.plotInfo(tablesInformation.total_state_by_kind_work_year(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_kind_work_year(),text, 'Kind of visitors & work (yearly)', 'Total of visitors')
         elif text == 'Total per kind of work type and kind of visitor':
-            plotInfo.plotInfo(tablesInformation.total_state_by_kind_work_visitor_year(),text)
+            plotInfo.plotInfo(tablesInformation.total_state_by_kind_work_visitor_year(),text, 'Kind of visitors & work', 'Total of visitors')
         elif text == 'Average per state (month)':
-            plotInfo.plotInfo(tablesInformation.average_state_month(),text)
+            plotInfo.plotInfo(tablesInformation.average_state_month(),text, 'States (monthly)', 'Avg of visitors')
         elif text == 'Average per state (year)':
-            plotInfo.plotInfo(tablesInformation.average_state_year(),text)
+            plotInfo.plotInfo(tablesInformation.average_state_year(),text, 'States (yearly)', 'Avg of visitors')
         elif text == 'Average per state and kind of visitors (month)':
-            plotInfo.plotInfo(tablesInformation.average_state_visitors_month(),text)
+            plotInfo.plotInfo(tablesInformation.average_state_visitors_month(),text, 'Kind of visitors per state (yearly)', 'Avg of visitors')
         elif text == 'Average per state and kind of visitors(year)':
-            plotInfo.plotInfo(tablesInformation.average_state_visitors_year(),text)
+            plotInfo.plotInfo(tablesInformation.average_state_visitors_year(),text, 'Kind of visitors per state (yearly)', 'Avg of visitors')
         elif text == 'Percentage per kind of visitor by month per state':
-            plotInfo.plotInfo(tablesInformation.percentage_visitors(),text)
+            plotInfo.plotInfo(tablesInformation.percentage_visitors(),text, 'Kind of visitors per state', 'Percent of visitors')
         elif text == 'Percentage per kind of work type and time (month)':
-            plotInfo.plotInfo(tablesInformation.percentage_visitors_month(),text)
+            plotInfo.plotInfo(tablesInformation.percentage_visitors_month(),text, 'Work (monthly)', 'Percent of visitors')
         elif text == 'Percentage per kind of work type and time (year)':
-            plotInfo.plotInfo(tablesInformation.percentage_visitors_year(),text)
+            plotInfo.plotInfo(tablesInformation.percentage_visitors_year(),text, 'Work (yearly)', 'Percent of visitors')
         elif text == 'Percentage per state per month':
-            plotInfo.plotInfo(tablesInformation.percentage_visitors_work_month(),text)
+            plotInfo.plotInfo(tablesInformation.percentage_visitors_work_month(),text, 'States (monthly)', 'Percent of visitors')
         elif text == 'Percentage per state per year':
-            plotInfo.plotInfo(tablesInformation.percentage_visitors_work_year(),text)
+            plotInfo.plotInfo(tablesInformation.percentage_visitors_work_year(),text, 'States (yearly)', 'Percent of visitors')
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
