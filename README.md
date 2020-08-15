@@ -69,7 +69,7 @@ Objetivos específicos y numerados:
 
 5. Una interfaz gráfica que implemente todo lo anterior (no desde línea de comandos) para poder insertar los datos, filtrarlos, mostrarlos a manera de tabla, realizar búsqueda por parámetro y visualizar los datos.
 
-**Usar PyQT, Tkinter, WxPython, Kivy u otra librería para componentes gráficos a su elección)**
+**Usar PyQT, Tkinter, WxPython, Kivy u otra librería para componentes gráficos a su elección.**
 
 6. Interpretar los resultados de manera sintetizada y concisa en formato de pie para cada gráfico y cálculo.
 
