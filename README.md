@@ -50,7 +50,7 @@ Objetivos específicos y numerados:
 
 **Mostrarlos como dataframe en Tabla con los datos mencionados arriba**
 
-4. Calculen los parámetros estadísticos:
+3. Calculen los parámetros estadísticos:
 
 - Totales por Estado por temporalidad (Mes y Año)
 - Totales por Estado por tipo de visitante
@@ -63,7 +63,7 @@ Objetivos específicos y numerados:
 - Porcentaje de tipo de visitantes por mes y año
 - Porcentaje de tipo de visitantes por recinto (Mes y Año)
 
-5. Graficar los parámetros estadísticos con Plotly. Deben tener textos descriptivos, títulos, nombres de ejes, etc.
+4. Graficar los parámetros estadísticos con Plotly. Deben tener textos descriptivos, títulos, nombres de ejes, etc.
 
 **Las gráficas deben entenderse por cualquier persona, sea experta o no en área estadística.**
 
