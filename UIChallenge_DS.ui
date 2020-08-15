@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>806</width>
+    <height>559</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(70, 199, 231);
+background-color: rgb(17, 17, 67);
+</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QComboBox" name="cbSelection">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>301</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(11, 11, 42);
+background-color: rgb(219, 219, 231);</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>All items</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Estructure data</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by state (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by state (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by kind of visitors per state</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by kind of visitors &amp; state (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by kind of visitors &amp; state (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by kind of work (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by kind of work (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Total visitors by kind of work and kind of visitor (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Average of visitors by state (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Average of visitors by state (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Average of visitors by kind of visitors per state (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Average of visitors by kind of visitors per state (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Percent of visitors by place per state (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Percent of visitors by place per state (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Percent of visitors by kind of visitors (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Percent of visitors by kind of visitors (year)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Percent of visitors by kind of visitors per place (month)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Percent of visitors by kind of visitors per place (year)</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblTitle">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 242, 252);</string>
+   </property>
+   <property name="text">
+    <string>Tables</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnExit">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>20</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(11, 11, 42);
+background-color: rgb(181, 227, 67);</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tblViewer">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>751</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(11, 11, 42);
+background-color: rgb(219, 219, 231);</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnPlot">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>50</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(11, 11, 42);
+background-color: rgb(181, 227, 67);</string>
+   </property>
+   <property name="text">
+    <string>Plot</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSelect">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>50</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(11, 11, 42);
+background-color: rgb(181, 227, 67);</string>
+   </property>
+   <property name="text">
+    <string>Select</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnSelect</sender>
+   <signal>clicked()</signal>
+   <receiver>tblViewer</receiver>
+   <slot>doItemsLayout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>440</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>469</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnExit</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>exec()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>707</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>648</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnPlot</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>635</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

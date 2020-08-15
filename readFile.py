@@ -1,22 +1,19 @@
 import pandas as pd
 import numpy as np
-import scipy
-import scipy.stats
-import plotly.graph_objects as go
-from matplotlib import pyplot as plt
-
+import tablesInformation
+import plotInfo
 #### STEP 1 ####
 
 # Reading the document from CSV file in the directory
 print('# Reading the document from CSV file in the directory')
-df = pd.read_csv('INAH_detallado_2019.csv', sep=',', encoding='latin-1')
+df = tablesInformation.dfTable()
 print(df)
 
 #### STEP 2 ####
 
 # Getting the columns that will used in this development
 print('# Getting the columns that will used in this development')
-data_frame = pd.DataFrame(df, columns = ['Estado', 'Clave SIINAH', 'Centro de trabajo', 'Año', 'Mes', 'Tipo de visitantes', 'Número de visitas', 'Nacionalidad'])
+data_frame = tablesInformation.tblDataFrame()
 print(data_frame)
 
 #### STEP 3 ####
@@ -48,8 +45,8 @@ df = df.convert_dtypes()
 
 # Total per state per month and per year
 print('# Total per state per month and per year')
-total_state_by_month = df.groupby(['Estado', 'Mes'])['Número de visitas'].aggregate([np.sum])
-total_state_by_year = df.groupby(['Estado', 'Año'])['Número de visitas'].aggregate([np.sum])
+total_state_by_month = tablesInformation.total_state_by_month()
+total_state_by_year = tablesInformation.total_state_by_year()
 print(total_state_by_month)
 print(total_state_by_year)
 
@@ -57,37 +54,41 @@ print(total_state_by_year)
 
 # Total per kind of visitor
 print('# Total per kind of visitor')
-total_state_by_kind_visitor = df.groupby(['Estado', 'Tipo de visitantes'])['Número de visitas'].aggregate([np.sum])
+total_state_by_kind_visitor = tablesInformation.total_state_by_kind_visitor()
 print(total_state_by_kind_visitor)
 
 # Total per kind of visitor and time (year and month)
 print('# Total per kind of visitor and time (year and month)')
-total_state_by_kind_visitor_year = df.groupby(['Estado', 'Tipo de visitantes' , 'Año'])['Número de visitas'].aggregate([np.sum])
-total_state_by_kind_visitor_month = df.groupby(['Estado', 'Tipo de visitantes', 'Mes'])['Número de visitas'].aggregate([np.sum])
+total_state_by_kind_visitor_year = tablesInformation.total_state_by_kind_visitor_year()
+total_state_by_kind_visitor_month = tablesInformation.total_state_by_kind_visitor_month()
 print(total_state_by_kind_visitor_year)
 print(total_state_by_kind_visitor_month)
 
 # Total per kind of work type and time (year and month)
 print('# Total per kind of work type and time (year and month)')
-total_state_by_kind_work_year = df.groupby(['Estado', 'Centro de trabajo' , 'Año'])['Número de visitas'].aggregate([np.sum])
-total_state_by_kind_work_month = df.groupby(['Estado', 'Centro de trabajo', 'Mes'])['Número de visitas'].aggregate([np.sum])
+total_state_by_kind_work_year = tablesInformation.total_state_by_kind_work_year()
+total_state_by_kind_work_month = tablesInformation.total_state_by_kind_work_month()
 print(total_state_by_kind_work_year)
 print(total_state_by_kind_work_month)
 
 # Total per kind of work type and kind of visitor
 print('# Total per kind of work type and kind of visitor')
-total_state_by_kind_work_visitor_year = df.groupby(['Estado', 'Centro de trabajo' , 'Tipo de visitantes', 'Año'])['Número de visitas'].aggregate([np.sum])
+total_state_by_kind_work_visitor_year = tablesInformation.total_state_by_kind_work_visitor_year()
 print(total_state_by_kind_work_visitor_year)
 
 # Average per state
 print('# Average per state')
-average_state = df.groupby(['Estado'])['Número de visitas'].aggregate([np.mean])
-print(average_state)
+average_state_month = tablesInformation.average_state_month()
+average_state_year = tablesInformation.average_state_year()
+print(average_state_month)
+print(average_state_year)
 
 # Average per state and kind of visitors
 print('# Average per state and kind of visitors')
-average_state_visitors = df.groupby(['Estado', 'Tipo de visitantes'])['Número de visitas'].aggregate([np.mean])
-print(average_state_visitors)
+average_state_visitors_month = tablesInformation.average_state_visitors_month()
+average_state_visitors_year = tablesInformation.average_state_visitors_year()
+print(average_state_visitors_month)
+print(average_state_visitors_year)
 
 # percentage per kind of visitor by month per state
 print('# percentage per kind of visitor by month per state')
@@ -96,32 +97,36 @@ print(percentage_visitors)
 
 # percentage per kind of work type and time (year and month)
 print('# percentage per kind of work type and time (year and month)')
-percentage_visitors_month = df.groupby(['Tipo de visitantes', 'Mes'])['Número de visitas'].aggregate([np.sum]) / len(df)
-percentage_visitors_year = df.groupby(['Tipo de visitantes', 'Año'])['Número de visitas'].aggregate([np.sum]) / len(df)
+percentage_visitors_month = tablesInformation.percentage_visitors_month()
+percentage_visitors_year = tablesInformation.percentage_visitors_year()
 print(percentage_visitors_month)
 print(percentage_visitors_year)
 
 # percentage visitor per kind of work
 print('# percentage visitor per kind of work')
-percentage_visitors_work = df.groupby(['Tipo de visitantes', 'Centro de trabajo'])['Número de visitas'].aggregate([np.sum]) / len(df)
-print(percentage_visitors_work)
+percentage_visitors_work_month = tablesInformation.percentage_visitors_work_month()
+percentage_visitors_work_year = tablesInformation.percentage_visitors_work_year()
+print(percentage_visitors_work_month)
+print(percentage_visitors_work_year)
 
 
 #### STEP 4 ####
 print('#### STEP 4 ####')
-total_state_by_month.plot(figsize = (10, 7), title = 'Total per state per month and per month')
-total_state_by_year.plot(figsize = (10, 7), title = 'Total per state per month and per year')
-total_state_by_kind_visitor.plot(figsize = (10, 7), title = 'Total per kind of visitor')
-total_state_by_kind_visitor_year.plot(figsize = (10, 7), title = 'Total per kind of visitor and time (year)')
-total_state_by_kind_visitor_month.plot(figsize = (10, 7), title = 'Total per kind of visitor and time (month)')
-total_state_by_kind_work_year.plot(figsize = (10, 7), title = 'Total per kind of work type and time (year)')
-total_state_by_kind_work_month.plot(figsize = (10, 7), title = 'Total per kind of work type and time (month)')
-total_state_by_kind_work_visitor_year.plot(figsize = (10, 7), title = 'Total per kind of work type and kind of visitor')
-average_state.plot(figsize = (10, 7), title = 'Average per state')
-average_state_visitors.plot(figsize = (10, 7), title = 'Average per state and kind of visitors')
-percentage_visitors.plot(figsize = (10, 7), title = 'percentage per kind of visitor by month per state')
-percentage_visitors_month.plot(figsize = (10, 7), title = 'percentage per kind of work type and time (month)')
-percentage_visitors_year.plot(figsize = (10, 7), title = 'percentage per kind of work type and time (year)')
-percentage_visitors_work.plot(figsize = (10, 7), title = 'Total per state per month and per year')
+plotInfo.plotInfo(total_state_by_month,'Total per state per month')
+plotInfo.plotInfo(total_state_by_year,'Total per state per year')
+plotInfo.plotInfo(total_state_by_kind_visitor,'Total per kind of visitor')
+plotInfo.plotInfo(total_state_by_kind_visitor_month,'Total per kind of visitor and time (month)')
+plotInfo.plotInfo(total_state_by_kind_visitor_year,'Total per kind of visitor and time (year)')
+plotInfo.plotInfo(total_state_by_kind_work_month,'Total per kind of work type and time (month)')
+plotInfo.plotInfo(total_state_by_kind_work_year,'Total per kind of work type and time (year)')
+plotInfo.plotInfo(total_state_by_kind_work_visitor_year,'Total per kind of work type and kind of visitor')
+plotInfo.plotInfo(average_state_month,'Average per state (month)')
+plotInfo.plotInfo(average_state_year,'Average per state (year)')
+plotInfo.plotInfo(average_state_visitors_month,'Average per state and kind of visitors (month)')
+plotInfo.plotInfo(average_state_visitors_year,'Average per state and kind of visitors(year)')
+plotInfo.plotInfo(percentage_visitors,'percentage per kind of visitor by month per state')
+plotInfo.plotInfo(percentage_visitors_month,'percentage per kind of work type and time (month)')
+plotInfo.plotInfo(percentage_visitors_year,'percentage per kind of work type and time (year)')
+plotInfo.plotInfo(percentage_visitors_work_month,'percentage per state per month')
+plotInfo.plotInfo(percentage_visitors_work_year,'percentage per state per year')
 
-plt.show()
