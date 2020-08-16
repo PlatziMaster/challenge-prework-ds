@@ -17,8 +17,7 @@ class Utils:
 
         df['Clave SIINAH'].fillna('0000000', inplace=True)
 
-        self.df = df
-        return self.df
+        return df
 
     def _load_geojson(self, path):
         with open(path, encoding='utf-8') as json_data:
@@ -44,6 +43,16 @@ class Utils:
                         showland=True, fitbounds='locations')
         fig.update_layout(title_text=title)
 
+        fig.show()
+
+    def plot_bar(self, data, x, y, title, **kwargs):
+        fig = px.bar(data.reset_index(),
+                    x=x,
+                    y=y,
+                    title=title,
+                    barmode='group',
+                    **kwargs
+                    )
         fig.show()
 
 

@@ -1,8 +1,4 @@
-from IPython.display import display
-
 import pandas as pd
-import numpy as np
-import plotly.express as px
 
 import argparse
 
@@ -31,12 +27,13 @@ def run(path):
     # - Totales por Estado por tipo de visitante y temporalidad (Mes y Año)
     state_date_visit_type = query.get_total(group_state_date_visit_type)
 
-    # - Totales por Centro de trabajo y temporalidad (Mes y año)    
+    # - Totales por Centro de trabajo y temporalidad (Mes y año)
     workcenter_date = query.get_total(group_workcenter_date)
 
     # - Totales por Centro de trabajo por tipo de visitante (Año)
-    workcenter_date_visit_type = query.get_total(group_workcenter_date_visit_type)
-    
+    workcenter_date_visit_type = query.get_total(
+        group_workcenter_date_visit_type)
+
     # - Promedio de visitantes totales por estado (Mes y Año)
     state_date_mean = query.get_average(group_state_date)
 
@@ -44,20 +41,37 @@ def run(path):
     state_date_visit_type_mean = query.get_average(group_state_date_visit_type)
 
     # - Porcentaje de visitantes por Recinto en visitantes por estado (total por mes).
-    query.get_percentage(['Estado', 'Mes'], ['Centro de trabajo'])
-    
-    # - Porcentaje de tipo de visitantes por mes y año
-    query.get_percentage(['Ano', 'Mes'], ['Tipo de visitantes'])
-    
-    # - Porcentaje de tipo de visitantes por recinto (Mes y Año)
-    query.get_percentage(['Centro de trabajo', 'Ano', 'Mes'], ['Tipo de visitantes'])
+    percentage_state_workcenter = query.get_percentage(
+        ['Estado', 'Mes'], ['Centro de trabajo'])
 
+    # - Porcentaje de tipo de visitantes por mes y año
+    percentage_date_visits_type = query.get_percentage(
+        ['Ano', 'Mes'], ['Tipo de visitantes'])
+
+    # - Porcentaje de tipo de visitantes por recinto (Mes y Año)
+    percentage_workcenter_visits_type = query.get_percentage(
+        ['Centro de trabajo', 'Ano', 'Mes'], ['Tipo de visitantes'])
 
     # - Totales por Estado por temporalidad (Mes y Año)
     utils.plot_map(state_date, 'Visits per state')
 
     # - Promedio de visitantes totales por estado (Mes y Año)
     utils.plot_map(state_date_mean, 'Average of visits per state')
+
+    # - Totales por Estado por tipo de visitante
+    # state_visit_type['Visitas (log)'] = state_visit_type['Numero de visitas'].apply(np.log)
+    utils.plot_bar(state_visit_type, 'Estado', 'Numero de visitas',
+                   title='Tipo de vitante por estado', color='Tipo de visitantes')
+
+    # - Totales por Estado por tipo de visitante y temporalidad (Mes y Año)
+    utils.plot_bar(state_date_visit_type, 'Estado', 'Numero de visitas',
+                   title='Tipo de vitante por estado', color='Tipo de visitantes',
+                   facet_row='Mes',
+                   )
+
+    # - Promedio de visitantes por tipo de visitante, por estado (Mes y Año)
+    utils.plot_bar(state_date_visit_type_mean, 'Estado', 'Numero de visitas',
+                   title='Tipo de vitante por estado', color='Tipo de visitantes')
 
 
 if __name__ == '__main__':
