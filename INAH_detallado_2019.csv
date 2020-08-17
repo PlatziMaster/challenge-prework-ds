@@ -1,4 +1,4 @@
-Estado,Clave SIINAH,Siglas,Centro de trabajo,Año,Mes,Tipo de visitantes,Número de visitas,Nacionalidad
+Estado,Clave_SIINAH,Siglas,Centro_de_trabajo,Año,Mes,Tipo_de_visitantes,Número_de_visitas,Nacionalidad
 Aguascalientes,2300100,M.- M.H,Museo Regional de Historia de Aguascalientes,2019,1,Estudiantes nivel básico,527,Nacional
 Aguascalientes,2300100,M.- M.H,Museo Regional de Historia de Aguascalientes,2019,1,Entrada dominical,617,Nacional
 Aguascalientes,2300100,M.- M.H,Museo Regional de Historia de Aguascalientes,2019,1,Boleto pagado,19,Extranjeros
